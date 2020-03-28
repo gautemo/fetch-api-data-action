@@ -35,7 +35,8 @@ try{
             makeSureFoldersAreCreated(file);
             fs.writeFileSync(file, JSON.stringify(data, null, 2));
             console.log(`successfully saved data from ${url} to ${file}`);
-        });
+        })
+        .catch(error => core.setFailed(error.message));
 }catch(error){
     core.setFailed(error.message);
 }
