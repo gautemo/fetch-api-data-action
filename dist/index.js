@@ -125,6 +125,7 @@ const fs = __webpack_require__(747);
 const path = __webpack_require__(622)
 
 const makeSureFoldersAreCreated = filename => {
+    console.log('splitting on ' + path.sep);
     const folders = filename.split(path.sep).slice(0, -1)
     if (folders.length) {
         folders.reduce((last, folder) => {

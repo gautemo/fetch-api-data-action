@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path')
 
 const makeSureFoldersAreCreated = filename => {
+    console.log('splitting on ' + path.sep);
     const folders = filename.split(path.sep).slice(0, -1)
     if (folders.length) {
         folders.reduce((last, folder) => {
