@@ -4,7 +4,7 @@
   "description": "GitHub Action to fetch data from an API and save it to a file",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "ncc build index.js && copy action.yml dist"
   },
   "repository": {
     "type": "git",
