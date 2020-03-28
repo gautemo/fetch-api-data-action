@@ -122,10 +122,28 @@ const core = __webpack_require__(694);
 const github = __webpack_require__(136);
 const fetch = __webpack_require__(707);
 const fs = __webpack_require__(747);
+const path = __webpack_require__(622)
+
+const makeSureFoldersAreCreated = filename => {
+    const folders = filename.split(path.sep).slice(0, -1)
+    if (folders.length) {
+        folders.reduce((last, folder) => {
+            const folderPath = last ? last + path.sep + folder : folder
+            if (!fs.existsSync(folderPath)) {
+                fs.mkdirSync(folderPath)
+            }
+            return folderPath
+        })
+    }
+}
 
 try{
     const url = core.getInput('url');
     const file = core.getInput('file');
+    console.log(`Fetch data started with`, `url: ${url}`, `file: ${file}`);
+    if(!url){
+        core.setFailed('url required');
+    }
     fetch(url)
         .then(response => {
             if(response.ok){
@@ -134,6 +152,7 @@ try{
             core.setFailed(`fetch to ${url} failed with status: ${response.status}`);
         })
         .then(data => {
+            makeSureFoldersAreCreated(file);
             fs.writeFileSync(file, data);
             console.log(`successfully saved data from ${url} to ${file}`);
         });
