@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Fetch data
-      uses: ./
+      uses: ./dist
       with:
         file: 'test.json'
       
