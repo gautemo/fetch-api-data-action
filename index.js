@@ -5,13 +5,15 @@ const fs = require('fs');
 const path = require('path')
 
 const makeSureFoldersAreCreated = filename => {
-    console.log('splitting on ' + path.sep);
     const folders = filename.split(path.sep).slice(0, -1)
     if (folders.length) {
         folders.reduce((last, folder) => {
             const folderPath = last ? last + path.sep + folder : folder
+            console.log('1', folderPath);
+            console.log('2', fs.existsSync(folderPath));
             if (!fs.existsSync(folderPath)) {
                 fs.mkdirSync(folderPath)
+                console.log('3', 'ejje');
             }
             return folderPath
         })
@@ -34,6 +36,7 @@ try{
         })
         .then(data => {
             makeSureFoldersAreCreated(file);
+            console.log('next')
             fs.writeFileSync(file, data);
             console.log(`successfully saved data from ${url} to ${file}`);
         });
