@@ -33,7 +33,7 @@ try{
         })
         .then(data => {
             makeSureFoldersAreCreated(file);
-            fs.writeFileSync(file, data);
+            fs.writeFileSync(file, JSON.stringify(data));
             console.log(`successfully saved data from ${url} to ${file}`);
         });
 }catch(error){
