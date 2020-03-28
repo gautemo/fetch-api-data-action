@@ -1,0 +1,13 @@
+name: 'Fetch API data'
+description: 'Action to fetch data from a public API to a file.'
+inputs:
+  file: 
+    description: 'location and filename'
+    required: false
+    default: 'actions/data.json'
+outputs:
+  success:
+    description: 'If the data was saved'
+runs:
+  using: 'node12'
+  main: 'index.js'

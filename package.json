@@ -1,0 +1,26 @@
+{
+  "name": "fetch-api-data-action",
+  "version": "1.0.0",
+  "description": "GitHub Action to fetch data from an API and save it to a file",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gautemo/fetch-api-data-action.git"
+  },
+  "keywords": [
+    "GitHub Actions"
+  ],
+  "author": "Gaute Meek Olsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gautemo/fetch-api-data-action/issues"
+  },
+  "homepage": "https://github.com/gautemo/fetch-api-data-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1"
+  }
+}
