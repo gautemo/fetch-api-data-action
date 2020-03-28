@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Fetch data
-      uses: ./dist
+      uses: ./
       with:
         file: 'testfile.json'
         url: 'https://fake-movie-database-api.herokuapp.com/api?s=batman'
