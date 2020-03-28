@@ -1,5 +1,8 @@
 name: 'Fetch data to file'
 description: 'Action to fetch data from a public API to a file.'
+branding:
+  icon: 'download'
+  color: 'green'
 inputs:
   url:
     description: 'url of API to fetch'
