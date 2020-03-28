@@ -15,7 +15,10 @@ jobs:
     - name: Fetch data
       uses: ./dist
       with:
-        file: 'test.json'
+        url: 'https://fake-movie-database-api.herokuapp.com/api?s=batman'
       
     - name: list files
-      run: ls
+      run: |
+        ls
+        cd actions
+        ls
