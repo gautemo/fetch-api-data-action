@@ -1,4 +1,4 @@
-name: 'Fetch data to file'
+name: 'Fetch Data to File'
 description: 'Action to fetch data from a public API to a file.'
 branding:
   icon: 'download'

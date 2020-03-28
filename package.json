@@ -2,10 +2,7 @@
   "name": "fetch-api-data-action",
   "version": "1.0.0",
   "description": "GitHub Action to fetch data from an API and save it to a file",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "ncc build index.js && copy action.yml dist"
-  },
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gautemo/fetch-api-data-action.git"
