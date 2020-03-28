@@ -1,0 +1,21 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Test Action
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  use-action:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Fetch data
+      uses: ./
+      with:
+        file: 'test.json'
+      
+    - name: list files
+      run: ls
