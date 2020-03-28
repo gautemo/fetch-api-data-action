@@ -120,10 +120,20 @@ function registerPlugin(plugins, pluginFunction) {
 
 const core = __webpack_require__(694);
 const github = __webpack_require__(136);
+const fetch = __webpack_require__(707);
+const fs = __webpack_require__(747);
 
 try{
+    const url = core.getInput('url');
     const file = core.getInput('file');
-    console.log(`file: ${file}`);
+    const success = fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            fs.writeFileSync(file, data);
+        });
+    if(!success){
+        core.setFailed('fetch failed');
+    }
 }catch(error){
     core.setFailed(error.message);
 }

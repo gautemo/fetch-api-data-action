@@ -1,6 +1,9 @@
 name: 'Fetch data'
 description: 'Action to fetch data from a public API to a file.'
 inputs:
+  url:
+    description: 'url of API to fetch'
+    required: true
   file: 
     description: 'location and filename'
     required: false
