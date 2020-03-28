@@ -12,7 +12,7 @@ The file data is saved to. Default `actions/data.json`
 ## Example usage
 
 ```
-uses: gautemo/fetch-api-data-action@1.0.1
+uses: gautemo/fetch-api-data-action@1.0.2
 with:
   url: 'https://fake-movie-database-api.herokuapp.com/api?s=batman'
   file: 'backup/data.json'
