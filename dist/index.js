@@ -129,14 +129,12 @@ const makeSureFoldersAreCreated = filename => {
     if (folders.length) {
         folders.reduce((last, folder) => {
             const folderPath = last ? last + path.sep + folder : folder
-            console.log('1', folderPath);
-            console.log('2', fs.existsSync(folderPath));
             if (!fs.existsSync(folderPath)) {
                 fs.mkdirSync(folderPath)
-                console.log('3', 'ejje');
+                console.log(`created folder: ${folderPath}`);
             }
             return folderPath
-        })
+        },'');
     }
 }
 
@@ -156,7 +154,6 @@ try{
         })
         .then(data => {
             makeSureFoldersAreCreated(file);
-            console.log('next')
             fs.writeFileSync(file, data);
             console.log(`successfully saved data from ${url} to ${file}`);
         });
