@@ -157,9 +157,6 @@ try{
             fs.writeFileSync(file, data);
             console.log(`successfully saved data from ${url} to ${file}`);
         });
-    if(!success){
-        core.setFailed('fetch failed');
-    }
 }catch(error){
     core.setFailed(error.message);
 }
