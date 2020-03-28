@@ -14,5 +14,6 @@ The file data is saved to. Default `actions/data.json`
 ```
 uses: actions/...
 with:
+  url: 'https://fake-movie-database-api.herokuapp.com/api?s=batman'
   file: 'backup/data.json'
 ```
