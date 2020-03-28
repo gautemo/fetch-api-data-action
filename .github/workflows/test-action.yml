@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Test Action
 
 on:
@@ -15,10 +13,10 @@ jobs:
     - name: Fetch data
       uses: ./dist
       with:
+        file: 'testfile.json'
         url: 'https://fake-movie-database-api.herokuapp.com/api?s=batman'
       
     - name: list files
       run: |
         ls
-        cd actions
-        ls
+
