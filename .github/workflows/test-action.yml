@@ -13,7 +13,7 @@ jobs:
     - name: Fetch data
       uses: ./
       with:
-        file: 'testfile.json'
+        file: 'testfiles.json'
         url: 'https://fake-movie-database-api.herokuapp.com/api?s=batman'
       
     - name: list files
